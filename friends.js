@@ -17,9 +17,11 @@ function parseHTML(html){
         //Jäsentele rivi ryhmiksi
         const regex = /(.*)\s\[?.*?\]?\s?\((\d*)\.\s([a-zA-ZäÄöÖ]*)\s?(\d*)?\)/g;
         let match = regex.exec(row);
+
         //Poista email nimestä jos sellainen on
-        if(match[1].match(/(.*)\s\[.*\]\s?/g)) {
-            let name = match[1].match(/(.*)\s\[?.*?\]?\s?/g);
+        const namex = /(.*)\s\[.*\]/g;
+        if(match[1].match(namex)) {
+            let name = namex.exec(match[1]);
             friend.Nimi = name[1];
         } else {
             friend.Nimi= match[1];
