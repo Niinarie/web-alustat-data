@@ -26,11 +26,11 @@ function parseHTML(html){
         } else {
             friend.Nimi= match[1];
         };
-        friend.Date.Day = match[2];
+        friend.Date.Day = parseInt(match[2]);
         friend.Date.Month = match[3];
         //Joistain puuttui vuosi, joten tsekkaa se vain jos löytyy
         if (match[4]) {
-            friend.Date.Year = match[4];
+            friend.Date.Year = parseInt(match[4]);
         }
         friendsList.Friends.push(friend);
         console.log(friend);
