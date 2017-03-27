@@ -30,11 +30,11 @@ function parseHTML(html){
         if (match[4]) {
             friend.Date.Year = match[4];
         }
-        //console.log(friend);
         friendsList.Friends.push(friend);
+        console.log(friend);
     }
 
-console.log(friendsList);
+//console.log(friendsList);
 }
 
 function parseFile(filename) {
