@@ -8,16 +8,17 @@ var path = require('path');
 function splitToArray(data, limiters) {
     let object = {};
     limiters.forEach(function(limiter){
-        let part = data.split('<th>' +limiter+'</th><td>')[1];
+        let part = data.split('<th>' +limiter+ '</th><td>')[1];
         let result = part.split('</td>')[0];
         object[limiter] = result.split(", ");
     })
     console.log(object);
 }
 
+//määritellään lista kohdista, jotka halutaan kaivaa profiilista esiin
 function parseHTML(html){
     let limiters = ['Elokuvia','Vaatetus','Musiikki', 'PELIT'];
-    let object = splitToArray(html,limiters);
+    splitToArray(html,limiters);
     
 }
 
