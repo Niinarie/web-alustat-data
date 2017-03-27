@@ -1,4 +1,4 @@
-//tehtävä 1
+//tehtävä 1, kaverit
 
 var fs = require('fs');
 var path = require('path');
