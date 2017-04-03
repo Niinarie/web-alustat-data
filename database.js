@@ -1,8 +1,8 @@
-var fs = require('fs');
-var path = require('path');
+const fs = require('fs');
+const path = require('path');
 
 //variable for database data once it's been fetched
-var database = {};
+let database = {};
 
 
 //search for name and gender
@@ -65,6 +65,7 @@ function size() {
     return database.length;
 }
 
+//promise based file-fetch
 function openFile(filename) {
     return new Promise(function(resolve, reject) {
         var pathToFile = path.join(__dirname, filename);
@@ -87,6 +88,13 @@ function readDatabase(filename) {
 
 readDatabase('data/fb-profile-dump.json');
 
+//size() -function
+//setTimeout(function(){ console.log(size()); }, 1000);
+
+//containsPerson() -function
+//setTimeout(function(){ console.log(containsPerson('anniina')); }, 1000);
+
+//search()
 setTimeout(function(){ console.log(search('','male','','simpsons','','')); }, 1000);
 
 
