@@ -50,12 +50,11 @@ function search(name,gender,music,tv,movies,restaurants) {
 //check if person with given name exists in database
 //returns true if person was found, otherwise false
 function containsPerson(string) {
-    //convert search word to regexp
-    let regExp = new RegExp(string,"i");
+    let match = string.toLowerCase();
     for (let i = 0; i < database.length; i++) {     
-        if (regExp.test(database[i].name)) {
-            return true; 
-        }   
+        if (database[i].name.toLowerCase().indexOf(match) != -1){
+            return true
+        }  
     }
     return false;
 }
